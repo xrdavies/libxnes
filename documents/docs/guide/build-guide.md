@@ -10,6 +10,12 @@ libxnes 库本身仅依赖标准 C 库。编译 Linux 示例程序需要安装 S
 sudo apt-get install libsdl2-dev
 ```
 
+macOS 使用 Homebrew 安装 SDL2：
+
+```shell
+brew install sdl2
+```
+
 ## 编译
 
 在源码根目录执行：
@@ -22,6 +28,7 @@ make
 编译完成后将生成：
 
 - `examples/linux/output/xnes` — Linux SDL2 示例程序
+- `examples/mac/output/xnes` — macOS SDL2 示例程序（Apple Silicon 或 Intel）
 - `examples/windows/output/xnes.exe` — Windows 示例程序（交叉编译）
 - `examples/debugger/output/xnes-debugger` — 调试器示例
 
@@ -31,12 +38,22 @@ make
 make -C examples/linux
 ```
 
+## 编译 macOS 示例
+
+在 macOS 上，根目录的 `make` 会自动构建 macOS 示例，也可以单独执行：
+
+```shell
+make -C examples/mac
+```
+
 ## 运行
 
 ```shell
 cd examples/linux/output/
 ./xnes <rom.nes>
 ```
+
+macOS 示例位于 `examples/mac/output/xnes`，支持相同的键盘、手柄和拖拽加载操作。
 
 也可以直接将 `.nes` 文件拖拽到程序窗口上加载。
 
