@@ -10,6 +10,12 @@ The libxnes library itself only depends on the standard C library. Building the 
 sudo apt-get install libsdl2-dev
 ```
 
+On macOS, install SDL2 with Homebrew:
+
+```shell
+brew install sdl2
+```
+
 ## Build
 
 Run the following in the source root directory:
@@ -22,6 +28,7 @@ make
 After the build completes, the following will be generated:
 
 - `examples/linux/output/xnes` — Linux SDL2 example program
+- `examples/mac/output/xnes` — macOS SDL2 example program (Apple Silicon or Intel)
 - `examples/windows/output/xnes.exe` — Windows example program (cross-compiled)
 - `examples/debugger/output/xnes-debugger` — Debugger example
 
@@ -31,12 +38,24 @@ After the build completes, the following will be generated:
 make -C examples/linux
 ```
 
+## Build the macOS Example
+
+On macOS, `make` at the repository root automatically builds the macOS example.
+To build it directly:
+
+```shell
+make -C examples/mac
+```
+
 ## Run
 
 ```shell
 cd examples/linux/output/
 ./xnes <rom.nes>
 ```
+
+The macOS executable is at `examples/mac/output/xnes` and supports the same
+keyboard, joystick, and drag-and-drop controls.
 
 You can also drag and drop a `.nes` file directly onto the program window to load it.
 

@@ -19,6 +19,14 @@ To compile the example, you need to install SDL2, In ubuntu systems:
 sudo apt-get install libsdl2-dev
 ```
 
+On macOS, install SDL2 with Homebrew and build the native example:
+
+```shell
+brew install sdl2
+make
+./examples/mac/output/xnes <rom.nes>
+```
+
 #### How to running
 
 After compiling all of files, you can running an example or drag some nes file to xnes:
@@ -27,6 +35,9 @@ After compiling all of files, you can running an example or drag some nes file t
 cd examples/linux/output/
 ./xnes <rom.nes>
 ```
+
+On macOS, use `examples/mac/output/xnes`; the same keyboard, joystick, and
+drag-and-drop controls are supported.
 
 ## Documentation
 
@@ -97,4 +108,3 @@ Online documentation: [https://libxnes.xboot.org](https://libxnes.xboot.org)
 ## License
 
 This library is free software; you can redistribute it and or modify it under the terms of the MIT license. See [MIT License](LICENSE) for details.
-
