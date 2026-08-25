@@ -3,6 +3,7 @@
 #
 
 CROSS_COMPILE	?=
+SDL2_CONFIG	?= sdl2-config
 
 AS			:=	$(CROSS_COMPILE)gcc -x assembler-with-cpp
 CC			:=	$(CROSS_COMPILE)gcc
@@ -29,10 +30,10 @@ LIBS 		:=
 INCDIRS		:=	.
 SRCDIRS		:=	.
 
-CFLAGS		+=	$(shell sdl2-config --cflags) -D_GNU_SOURCE
-CXXFLAGS	+=	$(shell sdl2-config --cflags) -D_GNU_SOURCE
+CFLAGS		+=	$(shell $(SDL2_CONFIG) --cflags) -D_GNU_SOURCE
+CXXFLAGS	+=	$(shell $(SDL2_CONFIG) --cflags) -D_GNU_SOURCE
 LIBDIRS		+=
-LIBS		+=	$(shell sdl2-config --libs)
+LIBS		+=	$(shell $(SDL2_CONFIG) --libs)
 sinclude	../../src/xnes.mk
 
 OUTPUT		:=	output
